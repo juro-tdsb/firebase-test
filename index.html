@@ -8,7 +8,9 @@
     <div id="main">
         <h3 id="heading">Test widget</h3>
         <span id="labelText"></span>
-        <input type="text" id="userInput">
+        <select id="myDropdown">
+            <option value="">Select an option</option>
+        </select>
     </div>
 
     <script type="module">
@@ -35,13 +37,20 @@
         const nameRef = ref(db, 'Sheet1/');
 
         onValue(nameRef, (snapshot) => {
-            snapshot.forEach((childSnapshot) => {
-                const childData = childSnapshot.val();
-                console.log(childData);
-            });
+            populateDropdown(snapshot);
         });
 
-        document.getElementById("labelText").innerHTML = "Let's go"
+        function populateDropdown(snapshot) {
+            const dropdown = document.getElementById("myDropdown");
+            snapshot.forEach((childSnapshot) => {
+                const childData = childSnapshot.val().Name;
+                const option = document.createElement("option");
+                option.value = childData;
+                option.text = childData;
+                dropdown.appendChild(option);
+            })
+        }
+
     </script>
 
     <script type="text/javascript">
