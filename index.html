@@ -7,8 +7,6 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
-        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
-
         // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyCTVgkkmDeOuxb9TRLcnJrJ-vFkz6179OA",
@@ -33,6 +31,8 @@
     </div>
 
     <script type="text/javascript">
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+        
         const db = getDatabase();
         const nameRef = ref(db, 'Sheet1/' + id);
         onValue(nameRef, (snapshot) => {
