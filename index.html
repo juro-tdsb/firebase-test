@@ -31,12 +31,14 @@
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-
         const db = getDatabase();
-        const nameRef = ref(db, 'Sheet1/' + id);
+        const nameRef = ref(db, 'Sheet1/');
+
         onValue(nameRef, (snapshot) => {
-            const data = snapshot.val();
-            console.log(data);
+            snapshot.forEach((childSnapshot) => {
+                const childData = childSnapshot.val();
+                console.log(childData);
+            });
         });
     </script>
 
