@@ -3,35 +3,34 @@
     <head>
         <script src="//js.jotform.com/JotFormCustomWidget.min.js"></script>
     </head>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import { getDb } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
+    
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyCTVgkkmDeOuxb9TRLcnJrJ-vFkz6179OA",
+        authDomain: "populate-dropdown-test.firebaseapp.com",
+        databaseURL: "https://populate-dropdown-test-default-rtdb.firebaseio.com",
+        projectId: "populate-dropdown-test",
+        storageBucket: "populate-dropdown-test.appspot.com",
+        messagingSenderId: "76589407412",
+        appId: "1:76589407412:web:40a9394dd645eb20d44be1"
+        };
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        document.getElementById('heading').innerHTML = "I changed it";
+    </script>
     <body>
         <div id="main">
             <h3 id="heading">Test widget</h3>
             <span id="labelText"></span>
             <input type="text" id="userInput">
         </div>
-
-        <script type="module">
-            // Import the functions you need from the SDKs you need
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-            // TODO: Add SDKs for Firebase products that you want to use
-            // https://firebase.google.com/docs/web/setup#available-libraries
-            import { getDb } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js"
-        
-            // Your web app's Firebase configuration
-            const firebaseConfig = {
-            apiKey: "AIzaSyCTVgkkmDeOuxb9TRLcnJrJ-vFkz6179OA",
-            authDomain: "populate-dropdown-test.firebaseapp.com",
-            databaseURL: "https://populate-dropdown-test-default-rtdb.firebaseio.com",
-            projectId: "populate-dropdown-test",
-            storageBucket: "populate-dropdown-test.appspot.com",
-            messagingSenderId: "76589407412",
-            appId: "1:76589407412:web:40a9394dd645eb20d44be1"
-            };
-        
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            document.getElementById('heading').innerHTML = "I changed it";
-        </script>
 
         <script type="text/javascript">
             //always subscribe to ready event and implement widget related code
