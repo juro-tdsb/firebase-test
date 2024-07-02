@@ -5,7 +5,7 @@
     </head>
     <body>
         <div id="main">
-            <h3>Test widget</h3>
+            <h3 id="heading">Test widget</h3>
             <span id="labelText"></span>
             <input type="text" id="userInput">
         </div>
@@ -30,6 +30,7 @@
         
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
+            document.getElementById('heading').innerHTML = "I changed it";
         </script>
 
         <script type="text/javascript">
