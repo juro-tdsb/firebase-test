@@ -44,7 +44,7 @@
             const dropdown = document.getElementById("myDropdown");
 
             // Clear existing
-            dropdown.innerHTML = "";
+            document.querySelectorAll('#myDropdown option').forEach(option => option.remove())
 
             snapshot.forEach((childSnapshot) => {
                 const childData = childSnapshot.val().Name;
