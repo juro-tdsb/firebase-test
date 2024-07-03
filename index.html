@@ -42,6 +42,10 @@
 
         function populateDropdown(snapshot) {
             const dropdown = document.getElementById("myDropdown");
+
+            // Clear existing
+            dropdown.innerHTML = "";
+
             snapshot.forEach((childSnapshot) => {
                 const childData = childSnapshot.val().Name;
                 const option = document.createElement("option");
