@@ -64,8 +64,7 @@
             snapshot.forEach((childSnapshot) => {
                 const childData = childSnapshot.val().Name;
                 const option = document.createElement("span");
-                option.value = childData;
-                option.text = childData;
+                option.innerHTML = childData;
                 option.onclick =   function selectOption(element) {
                     document.getElementById("button-text").innerText = element.innerText;
                     document.getElementById("dropdown").classList.remove("show");
