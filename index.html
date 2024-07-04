@@ -69,6 +69,7 @@
                 option.onclick =  function() {
                     document.getElementById("button-text").innerText = this.innerText;
                     selectedValue = this.innerText;
+                    console.log(selectedValue);
                     document.getElementById("dropdown").classList.remove("show");
 
                 }
@@ -76,8 +77,6 @@
             })
         }
 
-        console.log(selectedValue);
-        
         //always subscribe to ready event and implement widget related code
         //inside callback function , it is the best practice while developing widgets
         JFCustomWidget.subscribe("ready", function () {
