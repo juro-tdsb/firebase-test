@@ -56,10 +56,10 @@
         });
 
         function populateDropdown(snapshot) {
-            const dropdown = document.getElementById("dropdown-options-wrapper");
+            const dropdown = document.getElementsByClassName("dropdown-options-wrapper");
 
             // Clear existing
-            document.querySelectorAll('#dropdown-options-wrapper span').forEach(option => option.remove())
+            document.querySelectorAll('.dropdown-options-wrapper span').forEach(option => option.remove())
 
             snapshot.forEach((childSnapshot) => {
                 const childData = childSnapshot.val().Name;
