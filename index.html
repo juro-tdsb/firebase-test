@@ -65,8 +65,8 @@
                 const childData = childSnapshot.val().Name;
                 const option = document.createElement("span");
                 option.innerHTML = childData;
-                option.onclick =  function(this) {
-                    document.getElementById("button-text").innerText = element.innerText;
+                option.onclick =  function() {
+                    document.getElementById("button-text").innerText = this.innerText;
                     document.getElementById("dropdown").classList.remove("show");
                 }
                 dropdown.appendChild(option);
