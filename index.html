@@ -50,7 +50,6 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase();
         const nameRef = ref(db, 'Sheet1/');
-        var selectedValue = "";
 
         onValue(nameRef, (snapshot) => {
             populateDropdown(snapshot);
@@ -68,7 +67,6 @@
                 option.innerHTML = childData;
                 option.onclick =  function() {
                     document.getElementById("button-text").innerText = this.innerText;
-                    selectedValue = this.innerText;
                     document.getElementById("dropdown").classList.remove("show");
 
                 }
@@ -80,7 +78,10 @@
         //inside callback function , it is the best practice while developing widgets
         JFCustomWidget.subscribe("ready", function () {
             var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
+            var selectedValue = document.getElementById("button-text").innerText;
             document.getElementById('labelText').innerHTML = label;
+
+            console.log("This is Selected value" + selectedValue);
             //subscribe to form submit event
             JFCustomWidget.subscribe("submit", function () {
                 var msg = {
