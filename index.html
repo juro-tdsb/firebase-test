@@ -65,14 +65,12 @@
                 const childData = childSnapshot.val().Name;
                 const option = document.createElement("span");
                 option.innerHTML = childData;
-                option.onclick =  selectOption(this);
+                option.onclick =  function(this) {
+                    document.getElementById("button-text").innerText = element.innerText;
+                    document.getElementById("dropdown").classList.remove("show");
+                }
                 dropdown.appendChild(option);
             })
-        }
-
-        function selectOption(element) {
-            document.getElementById("button-text").innerText = element.innerText;
-            document.getElementById("dropdown").classList.remove("show");
         }
 
     </script>
