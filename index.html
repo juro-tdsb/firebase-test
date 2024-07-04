@@ -20,7 +20,7 @@
         </span></button>
         <div id="dropdown" class="dropdown-content">
             <input type="text" placeholder="Search.." id="input" onkeyup="filterFunction()">
-            <div class="dropdown-options-wrapper">
+            <div id="dropdown-options" class="dropdown-options-wrapper">
                 <!-- Options will be populated here -->
             </div>
         </div>
@@ -56,10 +56,10 @@
         });
 
         function populateDropdown(snapshot) {
-            const dropdown = document.getElementsByClassName("dropdown-options-wrapper");
+            const dropdown = document.getElementById("dropdown-options");
 
             // Clear existing
-            document.querySelectorAll('.dropdown-options-wrapper span').forEach(option => option.remove())
+            document.querySelectorAll('#dropdown-options span').forEach(option => option.remove())
 
             snapshot.forEach((childSnapshot) => {
                 const childData = childSnapshot.val().Name;
