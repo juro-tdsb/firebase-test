@@ -77,9 +77,9 @@
         //always subscribe to ready event and implement widget related code
         //inside callback function , it is the best practice while developing widgets
         JFCustomWidget.subscribe("ready", function () {
-            var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
+            // var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
             var selectedValue = document.getElementById("button-text").innerText;
-            document.getElementById('labelText').innerHTML = label;
+            // document.getElementById('labelText').innerHTML = label;
 
             console.log("This is Selected value" + selectedValue);
             //subscribe to form submit event
