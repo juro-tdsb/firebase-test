@@ -98,7 +98,15 @@
                 }
             });
 
-            document.querySelectorAll('#dropdown-options span').forEach(option => option.addEventListener('click', function() { JFCustomWidget.requestFrameResize({ height: 75 }); }))
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll("#dropdown-options span").forEach(option => 
+                    option.addEventListener("click", function() {
+                        JFCustomWidget.requestFrameResize({height: 75});
+                    })
+                )
+            })
+
+            // document.querySelectorAll('#dropdown-options span').forEach(option => option.addEventListener('click', function() { JFCustomWidget.requestFrameResize({ height: 75 }); }))
 
             //subscribe to form submit event
             JFCustomWidget.subscribe("submit", function () {
