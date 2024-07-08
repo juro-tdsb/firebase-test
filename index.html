@@ -71,7 +71,7 @@
                     document.getElementById("button-text").innerText = this.innerText;
                     selectedValue = this.innerText;
                     document.getElementById("dropdown").classList.remove("show");
-
+                    JFCustomWidget.requestFrameResize({height: 75});
                 }
                 dropdown.appendChild(option);
             })
@@ -90,13 +90,13 @@
             var dropdownBtn = document.getElementById('dropdown-button');
             var dropdown = document.getElementById('dropdown');
 
-            dropdownBtn.addEventListener('click', function() {
-                if (dropdown.classList.contains("show")) {
-                    JFCustomWidget.requestFrameResize({ height: 400 });
-                } else {
-                    JFCustomWidget.requestFrameResize({ height: 75 });
-                }
-            });
+            // dropdownBtn.addEventListener('click', function() {
+            //     if (dropdown.classList.contains("show")) {
+            //         JFCustomWidget.requestFrameResize({ height: 400 });
+            //     } else {
+            //         JFCustomWidget.requestFrameResize({ height: 75 });
+            //     }
+            // });
 
             document.addEventListener('DOMContentLoaded', function() {
                 document.querySelectorAll("#dropdown-options span").forEach(option => 
