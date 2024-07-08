@@ -83,6 +83,21 @@
             // var label = JFCustomWidget.getWidgetSetting('QuestionLabel');
             // document.getElementById('labelText').innerHTML = label;
 
+            // Resize iframe to initial height
+            JFCustomWidget.requestFrameResize({ height: 125 });
+
+            // Add event listener to dropdown
+            var dropdownBtn = document.getElementById('dropdown-button');
+            var dropdown = document.getElementById('dropdown');
+
+            dropdownBtn.addEventListener('click', function() {
+                if (dropdown.classList.contains("show")) {
+                    JFCustomWidget.requestFrameResize({ height: 250 });
+                } else {
+                    JFCustomWidget.requestFrameResize({ height: 125 });
+                }
+            });
+
             //subscribe to form submit event
             JFCustomWidget.subscribe("submit", function () {
                 var msg = {
