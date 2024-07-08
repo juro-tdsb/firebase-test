@@ -84,7 +84,7 @@
             // document.getElementById('labelText').innerHTML = label;
 
             // Resize iframe to initial height
-            JFCustomWidget.requestFrameResize({ height: 120 });
+            JFCustomWidget.requestFrameResize({ height: 75 });
 
             // Add event listener to dropdown
             var dropdownBtn = document.getElementById('dropdown-button');
@@ -92,9 +92,9 @@
 
             dropdownBtn.addEventListener('click', function() {
                 if (dropdown.classList.contains("show")) {
-                    JFCustomWidget.requestFrameResize({ height: 400 });
+                    JFCustomWidget.requestFrameResize({ height: 500 });
                 } else {
-                    JFCustomWidget.requestFrameResize({ height: 120 });
+                    JFCustomWidget.requestFrameResize({ height: 75 });
                 }
             });
 
